@@ -75,7 +75,7 @@ class TextSquare {
 
   grow() {
     this.side += 1 * this.speed;
-    this.fillColor.setAlpha(255 - this.side / 3);
+    this.fillColor.setAlpha(255 - this.side / 10);
     if (this.side > Math.max(windowWidth, windowHeight) + 10) {
       this.side = 0;
       this.mainText = crazyFastRumiTextProvider.next();
@@ -89,7 +89,8 @@ class TextSquare {
     stroke(this.strokeColor);
     noStroke();
     fill(this.fillColor);
-    square(windowWidth / 2, windowHeight / 2, this.side, 5);
+    let roundNess = this.side / 20;
+    square(windowWidth / 2, windowHeight / 2, this.side, roundNess);
 
     //FX text
     rectMode(CENTER);
